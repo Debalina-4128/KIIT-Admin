@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Offered</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        h1 {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        /* Table Styles */
+        .course-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .course-table th, .course-table td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .course-table th {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .course-table td {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Alternating Row Colors */
+        .course-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Degree Headers */
+        .degree-header {
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            padding: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Degree Color Blocks */
+        .bachelors { background-color: #0ac6e7; }
+        .masters { background-color: #1096f0; }
+        .dual-degree { background-color: #0059d6; }
+        .phd { background-color: #0036e6; }
+
+        /* Column Background Colors */
+        .course-table td:nth-child(1) {
+            background-color: #e0f7fa; /* Light cyan for Bachelor's Degree */
+        }
+        .course-table td:nth-child(2) {
+            background-color: #bbdefb; /* Light blue for Master's Degree */
+        }
+        .course-table td:nth-child(3) {
+            background-color: #c5cae9; /* Light indigo for Dual Degree */
+        }
+        .course-table td:nth-child(4) {
+            background-color: #d1c4e9; /* Light purple for Ph.D */
+        }
+
+        /* Responsive Table */
+        @media screen and (max-width: 768px) {
+            .course-table {
+                width: 100%;
+                display: block;
+                overflow-x: auto;
+            }
+            .course-table th, .course-table td {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Courses Offered</h1>
+
+    <table class="course-table">
+        <tr>
+            <th class="degree-header bachelors">Bachelor's Degree</th>
+            <th class="degree-header masters">Master's Degree</th>
+            <th class="degree-header dual-degree">Dual Degree</th>
+            <th class="degree-header phd">Ph.D</th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Computer Science & Engineering</li>
+                    <li>Information Technology</li>
+                </ul>
+                <p><strong>Duration:</strong> 4 Years</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Computer Science & Engineering (Spl- Computer Engineering)</li>
+                    <li>Computer Science & Engineering (Spl- Information Security)</li>
+                    <li>Computer Science Engineering (Spl- Data Analytics)</li>
+                    <li>Computer Science Engineering (Spl- Software Engineering)</li>
+                </ul>
+                <p><strong>Co-Branded:</strong> Collaboration with LTI Mindtree and L&T EduTech</p>
+                <ul>
+                    <li>M.Tech in AI & Data Science</li>
+                    <li>M.Tech in Internet of Things (IoT)</li>
+                    <li>M.Tech in Cybersecurity</li>
+                </ul>
+                <p><strong>Duration:</strong> 2 Years</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Dual Degree B.Tech & M.Tech in Computer Science & Engineering</li>
+                </ul>
+                <p><strong>Duration:</strong> 5 Years</p>
+                <ul>
+                    <li>Dual Degree B.Tech & MBA in Computer Science & Engineering</li>
+                </ul>
+                <p><strong>Duration:</strong> 6 Years</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Post Graduate Doctoral (Ph.D)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="4" style="background-color: #003366; color: white; text-transform: uppercase;">Eligibility Criteria</th>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Eligibility:</strong></p>
+                <p>Candidates must have passed 10+2 with at least 60% marks in Physics, Chemistry, and Mathematics.</p>
+            </td>
+            <td>
+                <p><strong>Eligibility:</strong></p>
+                <p>B.E. or B.Tech. with First Class or equivalent CGPA.</p>
+            </td>
+            <td>
+                <p><strong>Eligibility:</strong></p>
+                <p>Candidates must have passed 10+2 with at least 60% marks in Physics, Chemistry, and Mathematics.</p>
+            </td>
+            <td>
+                <p><strong>Eligibility:</strong></p>
+                <p>M.Tech / ME / MCA / MBA or equivalent with minimum 60% marks, or M.Sc./MA/M.Com/LLM with minimum 55% marks.</p>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .error {
+            color: red;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .loading {
+            font-size: 16px;
+            color: #007bff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Search Student Information</h2>
+        <form id="searchForm">
+            <label for="roll">Enter Roll Number:</label>
+            <input type="number" id="roll" name="roll" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Loading indicator -->
+        <div id="loading" class="loading" style="display: none;">Searching...</div>
+
+        <!-- Display results dynamically -->
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            let roll = document.getElementById("roll").value;
+            let resultDiv = document.getElementById("result");
+            let loadingDiv = document.getElementById("loading");
+
+            // Show loading indicator
+            loadingDiv.style.display = "block";
+            resultDiv.innerHTML = "";
+
+            // AJAX request to fetch student details
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "display.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onload = function() {
+                loadingDiv.style.display = "none"; // Hide loading
+                if (this.status == 200) {
+                    resultDiv.innerHTML = this.responseText;
+                } else {
+                    resultDiv.innerHTML = "<p class='error'>Error fetching data.</p>";
+                }
+            };
+
+            xhr.onerror = function() {
+                loadingDiv.style.display = "none";
+                resultDiv.innerHTML = "<p class='error'>Network error. Try again later.</p>";
+            };
+
+            xhr.send("roll=" + roll);
+        });
+    </script>
+</body>
+</html>
